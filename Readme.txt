@@ -10,6 +10,6 @@ python manage.py runserver 0.0.0.0:8001                    #启动服务
 
 
 （2）eclips创建Django项目: file-new-other-Pydev Django Project即可，
-项目中如果代码有改动，服务器会自动监测代码的改动并自动重新载入，
+项目中如果代码有改动，服务器会自动监测代码的改动并自动重新载入，不需要手动重启，
+如果eclips创建的时候没有 初始project的话可以cd到目录: django-admin.py startproject mysite
 
-所以如果你已经启动了服务器则不需手动重启。
