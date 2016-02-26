@@ -8,6 +8,11 @@ django-admin.py startproject HelloWorld                    #创建项目
 
 python manage.py runserver 0.0.0.0:8001                    #启动服务
 
+python manage.py dbshell  #数据库命令行
+
+python manage.py shell   #python项目终端
+
+python manage.py  可以查看更多命令
 
 （2）eclips创建Django项目: file-new-other-Pydev Django Project即可，记住project不能有种横杠.
 
