@@ -1,3 +1,6 @@
+必须注意的地方：对于刚学习python不久的 千万不要学此框架 此框架 很笨重 ，不懂mvc 看得会是云里雾里。
+所以先学flask和web2.py  一定要注意了
+
 website:http://www.cnblogs.com/linjiqin/p/3595891.html
 
 安装Django，使用pip install Django 安装即可, 并将 D:\Python27\Scripts 加入环境变量
