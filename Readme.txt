@@ -18,6 +18,8 @@ python manage.py shell   #python项目终端
 
 python manage.py  可以查看更多命令
 
+python manage.py migrate  #创建数据库，没有定义数据库驱动默认是SQLite
+
 （2）eclips创建Django项目: file-new-other-Pydev Django Project即可，记住project不能有种横杠.
 
 
