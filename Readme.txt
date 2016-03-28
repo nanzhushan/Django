@@ -21,3 +21,14 @@ python manage.py  可以查看更多命令
 
 （2）eclips创建Django项目: file-new-other-Pydev Django Project即可，记住project不能有种横杠.
 
+
+(3)不错的Django博客源码:
+http://www.cnblogs.com/fnng/p/3737964.html
+
+
+
+网上搜索 发现Django 和flask的文章好多 但是web.py的很少.Django还有后台功能，初学者还是学习Django吧。
+多看看人家的源码 然后照着写.
+
+
+web.py很轻 可以随意扩展 所以什么都要自己造轮子.豆瓣网就是用的web.py
