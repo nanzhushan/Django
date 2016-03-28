@@ -20,6 +20,11 @@ python manage.py  可以查看更多命令
 
 python manage.py migrate  #创建数据库，没有定义数据库驱动默认是SQLite
 
+python manage.py createsuperuser  #创建后台admin账号
+
+注意:syncdb  是Django1.7之前的版本，之后的版本用migrate代替
+
+
 （2）eclips创建Django项目: file-new-other-Pydev Django Project即可，记住project不能有种横杠.
 
 

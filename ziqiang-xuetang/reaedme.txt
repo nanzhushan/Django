@@ -1,0 +1,18 @@
+(1)
+我们在learn这个目录中,把views.py打开,修改其中的源代码,改成下面的
+
+#coding:utf-8
+from django.http import HttpResponse
+ 
+def index(request):
+    return HttpResponse(u"欢迎光临 ")
+
+第一行是声明编码为utf-8, 因为我们在代码中用到了中文,如果不声明就报错.
+
+第二行引入HttpResponse，它是用来向网页返回内容的，就像Python中的 print 一样，只不过 HttpResponse 是把内容显示到网页上。
+
+我们定义了一个index()函数，第一个参数必须是 request，与网页发来的请求有关，request 变量里面包含get或post的内容，用户浏览器，系统等信息在里面。
+
+
+(2)
+render_to_response() 的第一个参数必须是要使用的模板名称。 如果要给定第二个参数，那么该参数必须是为该模板创建 Context 时所使用的字典。 如果不提供第二个参数， render_to_response() 使用一个空字典。
