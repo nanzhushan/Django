@@ -1,3 +1,10 @@
+##注意指定安装Django的版本
+（sudo) pip install Django
+或者 (sudo) pip install Django==1.6.10 或者 pip install Django==1.7.6
+
+(sudo) pip install --upgrade pip
+
+
 学习一段时间的web.py  看了一些demo ，用web.py可以写自己的博客了但是没有后台。
 现在回头来看Django 看得懂了。看来初学者学习web.py然后再看Django是个不错的选择.
 
@@ -12,7 +19,7 @@ django-admin.py startproject HelloWorld                    #创建项目
 
 python manage.py runserver 0.0.0.0:8001                    #启动服务
 
-python manage.py dbshell  #数据库命令行
+python manage.py dbshell  #数据库命令行
 
 python manage.py shell   #python项目终端
 
