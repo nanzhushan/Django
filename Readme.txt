@@ -1,8 +1,7 @@
-必须注意的地方：对于刚学习python不久的 千万不要学此框架 此框架 很笨重 ，不懂mvc 看得会是云里雾里。
-所以先学flask和web2.py  一定要注意了。
+学习一段时间的web.py  看了一些demo ，用web.py可以写自己的博客了但是没有后台。
+现在回头来看Django 看得懂了。看来初学者学习web.py然后再看Django是个不错的选择.
 
-或者也可以学习web2py 一站式解决方案 ，不过web2py的资料好少，英文的还打不开 还是老实学flask吧
-
+或者也可以学习web2py 一站式解决方案 ，不过web2py的资料好少，
 website:http://www.cnblogs.com/linjiqin/p/3595891.html
 
 安装Django，使用pip install Django 安装即可, 并将 D:\Python27\Scripts 加入环境变量
