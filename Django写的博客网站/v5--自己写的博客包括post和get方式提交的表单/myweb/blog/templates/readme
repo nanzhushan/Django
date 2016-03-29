@@ -1,0 +1,9 @@
+(1)创建基础模板
+在mysite/blog/templates目录里创建base.html的模板：
+
+(2)
+修改index.html模板，让它引用base.html模板和它的“content”块。
+
+
+(3)
+ 模板文件里的anction 表示提交之后执行的动作
