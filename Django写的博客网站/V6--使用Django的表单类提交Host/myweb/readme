@@ -1,0 +1,20 @@
+(1)当请求一个页面时,Django创建一个 HttpRequest 对象.
+该对象包含 request 的元数据.
+然后 Django 调用相应的 view 函数(HttpRequest 对象自动传递给该view函数<作为第一个参数>),
+每一个 view 负责返回一个 HttpResponse 对象.
+
+
+(2)
+Template加载机制
+一般来说，你在你的文件系统中存入模板，但你也可以使用自定义的template加载器去从其它地方
+加载你的模板。
+
+Django有两种方式去加载你的模板：
+1. django.template.loader.get_template(template_name)：get_template通过模板名参数，返回
+一个模板对象，如果模板不存在，报错TemplateDoesNotExist
+
+2. django.template.loader.select_template(template_name_list)：参数为模板名的列表，返回第一个
+存在的模板，如果列表中所有模板都不存在，就报错TemplateDoesNotExist
+
+以上函数都默认在settings.py中TEMPLATE_DIRS属性下添加的路径下查找，不过，在内部机制上，这些函数
+也可以指定不同的加载器来完成这些任务。
