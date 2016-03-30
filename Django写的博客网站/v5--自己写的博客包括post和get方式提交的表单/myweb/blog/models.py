@@ -6,7 +6,7 @@ from django.contrib import admin
 
 
 #类名代表数据库表名,定义表格式
-class BlogsPost(models.Model):
+class BlogsPost(models.Model):                                 #BlogsPost继承父类models.Model
     title = models.CharField(max_length=150)
     body = models.TextField()
     timestamp = models.DateTimeField()
