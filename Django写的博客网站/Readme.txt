@@ -42,3 +42,6 @@ def book_list(request):
 (2) 完整的解释和操作链接:
 
 http://docs.30c.org/djangobook2/chapter05/
+
+
+不过个人觉得 不用用到其他数据库 还是直接用原生的import mysqldb吧 简单不用学它特有的数据库的api操作方法，它特有的数据库api的操作方法估计也难以实现复杂的sql语句和 存储过程的编写.
