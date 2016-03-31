@@ -73,6 +73,6 @@ f 'xuehaoPostAdmin', or an attribute or method on 'blog.xuehaoPost'.
 
 就可以创建了
 
-
+如果后台可以显示，但是后台添加报错表不存在，那么手工添加，和model对应即可.(反正数据库和model要一一对应)
 
 
