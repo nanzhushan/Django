@@ -16,3 +16,10 @@ python manage.py shell:
 >>> StudentPost.objects.all()
 [<StudentPost: StudentPost object>, <StudentPost: StudentPost object>]
 
+
+
+从上图可知:
+
+定义表结构一定要在models里定义，增加和删除数据直接数据库的客户端工具修改即可。
+
+
