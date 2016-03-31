@@ -23,3 +23,48 @@ python manage.py shell:
 定义表结构一定要在models里定义，增加和删除数据直接数据库的客户端工具修改即可。
 
 
+(2)如果数据库里有几百张表 是不是model里定义很多，好麻烦。
+解决方法：
+
+写个脚本自动生成：
+
+查询表结构 动态生成 模型，我之前三个表我都懒得手动写，列出所有表结构名。然后查询
+
+
+（3）尝试直接改sql试一试。也就是不用django的 orm，不在模型里定义(python manager.py syncdb)是根据model里生成表结构的。
+
+刚才试了直接添加表是不行的，后台会提示找不到模型。
+
+可以这样如下：
+先创建个表定义id,（在模型中）之后再用sql手工修改表结构：
+
+代码如下：
+class xuehaoPost(models.Model):
+    name = models.CharField(max_length=150)
+
+admin.site.register(xuehaoPost)   ##添加到后台
+
+
+代码如下：
+
+class xuehaoPost(models.Model):
+    name = models.CharField(max_length=150)
+
+class xuehaoPostAdmin(admin.ModelAdmin):           #括号里是父类
+    list_display = ('id', 'city')      #定义后台页面进去的子页面显示
+
+admin.site.register(xuehaoPost,xuehaoPostAdmin)   ##添加到后台
+
+报错:
+
+<class 'blog.models.xuehaoPostAdmin'>: (admin.E108) The value of 'list_display[1]' refers to 'city', which is not a callable, an attribute o
+f 'xuehaoPostAdmin', or an attribute or method on 'blog.xuehaoPost'.
+
+没有定义，city，因为city是纯sql加的。
+
+
+从上可以知道还是只能通过模型创建表结构了。然后可以写脚本生成表结构.
+
+
+
+
