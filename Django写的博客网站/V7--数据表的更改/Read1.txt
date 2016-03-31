@@ -66,5 +66,13 @@ f 'xuehaoPostAdmin', or an attribute or method on 'blog.xuehaoPost'.
 从上可以知道还是只能通过模型创建表结构了。然后可以写脚本生成表结构.
 
 
+(4)
+从截图可以看出 ，migrations文件夹记录了改变.
+
+如果手工修改了sql  然后再进行python manage.py makemigrations blog,再migrations  删除记录即可。
+
+就可以创建了
+
+
 
 
