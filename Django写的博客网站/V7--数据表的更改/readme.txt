@@ -24,7 +24,17 @@ python manage.py syncdb
 原来blog_blogspost  的表也没有删除.
 
 
+########################################################
+###对于1.8.2  python manage.py migrate 等价于 python manage.py syncdb
 
+注意：
+# 进入包含有 manage.py 的文件夹
+python manage.py syncdb
+ 
+注意：Django 1.7及以上的版本需要用以下命令
+python manage.py makemigrations
+python manage.py migrate
+#########################################################
 
 
 我们会想为什么一定要同步model和数据库了？
