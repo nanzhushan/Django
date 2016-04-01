@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+
 <html>
 <body>
-<p>请输入两个数字:</p>
-<p>次行数字不会重新加载，本页面用ajax提交表单，局部刷新</p>
+<p>请输入两个数字</p>
 <form action="/add/" method="get">
     a: <input type="text" id="a" name="a"> <br>
     b: <input type="text" id="b" name="b"> <br>
@@ -12,12 +11,12 @@
 
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function(){
-      $("#sum").click(function(){
-        var a = $("#a").val();
+    $(document).ready(function(){     // 文档加载完成
+      $("#sum").click(function(){   //事件绑定,
+        var a = $("#a").val();      //这是注释
         var b = $("#b").val();
 
-        $.get("/add/",{'a':a,'b':b}, function(ret){
+        $.get("/add/",{'a':a,'b':b}, function(ret){   /* 实现get进行异步提交，网址不显示，如果纯粹表单提交会刷新整个页面 */
             $('#result').html(ret)
         })
       });
