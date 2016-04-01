@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>svn-uat表单处理</title>
+    <h1> 以下是uat-svn的更新指令</h1>
+    <h2>update-restart: 更新并重启</h2>
+    <h2>update: 只更新</h2>
+    <a href="http://120.26.86.236:1000/program-project/project-svn-uat-crm/" target="_blank">点击进入svn-uat的浏览目录</a>
+
+  <style type="text/css">
+    body, div {
+      padding: 0;
+      margin: 0;
+    }
+    #container {
+      width: 1070px;
+      margin: 0 auto;
+    }
+    .wrap {
+      width: 360px;
+      height: 48px;
+      margin: 0 auto;
+    }
+    .wrap form input {
+      width: 240px;
+      height: 24px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="wrap">
+      <form action="." class="crawl" method="GET">
+        <input type="text" name="q" value="{{query|escape}}">
+        <button type="submit">
+          提交
+        </button>
+      </form>
+      {% if results %}
+        <h2>{{ results }}</h2>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
