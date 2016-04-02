@@ -12,8 +12,8 @@
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){     // 文档加载完成
-      $("#sum").click(function(){   //事件绑定,
-        var a = $("#a").val();      //这是注释
+      $("#sum").click(function(){   //事件绑定, #的意思是取html元素（也就是操作html DOM）
+        var a = $("#a").val();      //val()  返回或设置被选元素的值。
         var b = $("#b").val();
 
         $.get("/add/",{'a':a,'b':b}, function(ret){   /* 实现get进行异步提交，网址不显示，如果纯粹表单提交会刷新整个页面 */

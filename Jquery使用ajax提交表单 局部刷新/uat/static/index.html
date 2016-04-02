@@ -11,13 +11,13 @@
 
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function(){
-      $("#sum").click(function(){
-        var a = $("#a").val();
-        var b = $("#b").val();
+    $(document).ready(function(){   //文档加载完成
+      $("#sum").click(function(){     //# 取html元素
+        var a = $("#a").val();    //val()  返回或设置被选元素的值。
+        var b = $("#b").val();    //var定义变量
 
         $.get("/add/",{'a':a,'b':b}, function(ret){
-            $('#result').html(ret)
+            $('#result').html(ret)          //
         })
       });
     });
