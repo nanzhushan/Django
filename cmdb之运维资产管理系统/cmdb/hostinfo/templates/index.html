@@ -1,0 +1,8 @@
+<h1>以下是cmdb里的部分内容:</h1>
+
+{% for post in posts %}
+<h2>主机名称; {{ post.hostname }}</h2>
+<p>ip地址: {{ post.ip }}</p>
+<p>系统版本: {{ post.osversion }}</p>
+    <p>........</p>
+{% endfor%}
