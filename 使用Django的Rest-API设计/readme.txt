@@ -1,3 +1,7 @@
+学习链接:
+https://blog.laisky.com/p/django-rest/
+
+
 安装方法:
 pip install djangorestframework 
 
