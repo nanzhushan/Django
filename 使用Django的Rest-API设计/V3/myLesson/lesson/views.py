@@ -12,9 +12,9 @@ from lesson.models import Book
 
 class JSONResponse(HttpResponse):
     def __init__(self,data,**kwargs):
-        content = JSONResponse().render(data)
+        content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
-        super(JSONRenderer,self).__init__(content,**kwargs)
+        super(JSONResponse,self).__init__(content,**kwargs)
 
 
 def book_list(request,num):
