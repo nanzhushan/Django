@@ -2,6 +2,8 @@
 https://blog.laisky.com/p/django-rest/
 
 
+注意：Django 自带了api后台,比flask复杂点
+
 安装方法:
 pip install djangorestframework 
 
