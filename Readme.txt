@@ -17,6 +17,8 @@ website:http://www.cnblogs.com/linjiqin/p/3595891.html
 
 django-admin.py startproject HelloWorld                    #创建项目
 
+python manage.py startapp oms
+
 python manage.py runserver 0.0.0.0:8001                    #启动服务
 
 python manage.py dbshell  #数据库命令行
