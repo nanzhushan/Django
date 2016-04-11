@@ -1,3 +1,4 @@
+(1)
 有时候用post方式的csrf，感觉很麻烦，当然也可以取消如下：
 在settings.py中设置
 
@@ -12,3 +13,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+
+(2)用HttpResponse 打中文的时候要声明 u"这是中文"，不然提示需要decode.
