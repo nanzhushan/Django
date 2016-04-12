@@ -4,3 +4,6 @@
 每一个 view 负责返回一个 HttpResponse 对象.
 
 
+（3）对于表单的提交，如果没有写if method == "GET",默认就是 if methond == "POST"之外的就是post，
+
+对于是GET的默认就是  return HttpResponse(u"内容.....")
