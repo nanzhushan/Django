@@ -1,0 +1,27 @@
+<h1>以下是数据库中所有主机的内容:</h1>
+<table width="1000" height="50" border="1">
+ <thead>
+ <tr><th width="100">IP地址</th> <th width="100">主机名</th> <th width="100">产品</th><th width="100">应用</th>
+  <th width="100">机柜编号</th> <th width="100">运行状态</th> <th width="100">备注</th><th width="100">操作</th>
+
+ </tr>
+
+ </thead>
+
+{% for list1 in list %}
+
+    <tr>
+
+<td width="100">{{ list1.ip }}</td>
+<td width="100">{{ list1.hostname }}</td>
+<td width="100">{{ list1.product }}</td>
+<td width="100">{{ list1.application }}</td>
+<td width="100">{{ list1.idc_jg }}</td>
+<td width="100">{{ list1.status }}</td>
+<td width="100">{{ list1.remark }}<br></td>
+
+    </tr>
+{% endfor%}
+</table>
+
+{#{{ list}}#}
