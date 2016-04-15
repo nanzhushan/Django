@@ -1,0 +1,26 @@
+
+<html>
+<body>
+<p>请输入两个数字:</p>
+<form action="/add/" method="get">
+    a: <input type="text" id="a" name="a"> <br>
+    b: <input type="text" id="b" name="b"> <br>
+    <p>result: <span id='result'></span></p>
+    <button type="button" id='sum'>提交</button>
+</form>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){     // 文档加载完成,这是为了防止文档在完全加载（就绪）之前运行 jQuery 代码
+      $("#sum").click(function(){   //事件绑定,
+        var a = $("#a").val();   //这是注释
+        var b = $("#b").val();  //美元符号定义jQuery ，
+
+        $.get("/add/",{'a':a,'b':b}, function(ret){   /* 实现get进行异步提交，网址不显示，如果纯粹表单提交会刷新整个页面 */
+            $('#result').html(ret)
+        })
+      });
+    });
+</script>
+</body>
+</html>
