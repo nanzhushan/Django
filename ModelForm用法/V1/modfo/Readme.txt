@@ -1,0 +1,4 @@
+Django中内置了Form和Model两个类，有时候页面的表单form类与Model类是一一对应，
+因此分别定义Form类和Model类会比较麻烦，最简单的方式就是通过Model来生成一个Form类，Django内置的ModelForm就是为此而生的
+
+这样可以通过表单形式修改数据库里的数据.

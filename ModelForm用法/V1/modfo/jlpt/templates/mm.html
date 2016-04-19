@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+</html>
+    <head>
+        <title>报名情况统计</title>
+    </head>
+    <body>
+        <p style="text-align:center;font-size:1.5em;">少年,你好!!</p>
+        <form action="/jlpt/" method="post">
+        {% csrf_token %}
+            <fieldset>
+                <legend>你要参加２０１6年７月ＪＬＰＴ的哪个等级考试？</legend>
+                        {{ form_info.as_p }}
+                        <input type="submit" value="submit" />
+                </fieldset>
+        </form>
+    </body>
+</html>
