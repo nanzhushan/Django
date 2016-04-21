@@ -79,7 +79,7 @@ def create_host(request):
         ##表单插入数据
         c = HostList.objects.create(id=ss2_1,ip=ipnew,hostname=hostnamenew,product=productnew,application=applicationnew,idc_jg=idc_jgnew,status=statusnew,remark=remarknew)
         c.save()
-        # return HttpResponse(u"你已经成功的通过post表单方式添加到了数据库")
+        return HttpResponse(u"你已经成功的通过post表单方式添加到了数据库")
 
 
 ##定义删除主机按钮
