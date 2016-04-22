@@ -1,4 +1,12 @@
 <h1>以下是数据库中所有主机的内容:</h1>
+
+<form method = 'post'>
+    <input type="text" name="ip" />
+
+    <input type="submit" value = "提交ip地址查询" />
+</form>
+
+
 <style type="text/css">
 .aa {
 	text-align: center;
@@ -27,12 +35,22 @@
 <td width="100">{{ list1.idc_jg }}</td>
 <td width="100">{{ list1.status }}</td>
 <td width="100">{{ list1.remark }}</td>
-<td  class="btn btn-info btn-sm"><li><a  href="{{ list1.id }}">编辑</a> <a  href="/delete_host/{{ list1.id }}/">删除</a> </li></td>
+<td  class="btn btn-info btn-sm"><li><a  href="{{ list1.id }}">编辑</a>   <a  href="/delete_host/{{ list1.id }}/">删除</a> </li> </td>
+
 
     </tr>
 {% endfor%}
 </table>
+<br>
+<br>
+
+<a href="?page=0"> 第一页</a>    &nbsp &nbsp
+
+<a href="?page={{ pre_page }}"> 上一页</a>   &nbsp &nbsp
+
+<a href="?page={{ next_page }}">下一页</a>
 
 
  <p class="aa"><a  href="/creat_host/" > 添加新主机</a> <p>
+
 {#{{ list}}#}
