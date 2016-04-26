@@ -1,0 +1,59 @@
+
+<html>
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+
+<script type="application/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>  
+<title>JSON格式表单提交数据</title>
+
+
+<script type="application/javascript">  
+
+
+//自动将form表单封装成json
+function onClik(){
+
+	 var name = $("#name").val();
+	 var sex = $("#sex").val();
+	 var c = { name: name, sex: sex };
+	 c = JSON.stringify( c );  // 序列化成字符串
+
+    $.ajax({
+    //contentType: "application/json",
+        url: "/json/",
+     //   data:"haha=" + c,   //加个键值，后台直接读取key
+        data:c,
+        type : 'post',
+        success: function(data){    //回调函数，就是成功之后后台返回的值
+            alert("name="+data['name']+'\n'+'sex='+data['sex']+'\n'+'文档加载完成，这是回调后台数据');
+        }
+    });
+	
+}
+
+
+</script>
+
+</head>  
+  
+<body>  
+
+<form id="form1" name="form1" >
+  <p>进货人 :  
+    <label for="name"></label>  
+    <input type="text" name="name" id="name" />  
+  </p>  
+  <p>性别:  
+    <label for="sex"></label>
+     <input type="text" name="sex" id="sex" />
+
+  </p>  
+  
+  <input type="button" name="submit" onclick="onClik();" value="提交"/>
+</form>  
+
+{{ name }}
+
+</body>  
+</html>
+
