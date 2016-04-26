@@ -12,10 +12,10 @@
 //自动将form表单封装成json
 function onClik(){
 
-	 var name = $("#name").val();
+	 var name = $("#name").val(); //取html元素 
 	 var sex = $("#sex").val();
 	 var c = { name: name, sex: sex };
-	 c = JSON.stringify( c );
+	 c = JSON.stringify( c );   //序列化成字符串
 
     $.ajax({
         url: "/json/",
