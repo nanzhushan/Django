@@ -18,7 +18,7 @@ function onClik(){
 	 c = JSON.stringify( c );  //弹出框提示
 
     $.ajax({
-        url: "/json/",
+        url: "/json/",                  //相当于表单的action
         data:c,
         type : 'post',
         success: function(){
@@ -46,7 +46,7 @@ function onClik(){
 
   </p>  
   
-  <input type="button" name="submit" onclick="onClik();" value="提交"/>  
+  <input type="button" name="submit"  value="提交"/>
 </form>  
 
 </body>  
