@@ -8,33 +8,6 @@ from django.template import RequestContext,loader,Context
 from ff.models import BlogsPost
 
 # Create your views here.
-"""
-验证代码:
- f = open('d:\\ff.txt', 'w')
-        f.write(query1)
-        f.close()
-
-"""
-
-#模板页通过get方式提交数据,后台获取值
-def fy(request):
-    pnum = 1  #页数初始值
-
-    posts = BlogsPost.objects.all()
-    post1 = posts[0:2]   #提取前两个数据
-    post2 = posts[2:4]
-
-    postn = posts[(pnum-1)*2:pnum*2]    ##2 表示一页包含的内容
-
-    query = request.GET.get('q', '')   #就是pagetype类型
-    query1 = str(query)
-
-
-    if query1 == "down":
-        pnum += 1
-        return render_to_response('1.html', {'list': post2})
-
-    return render_to_response('1.html',{'list':postn})
 
 def json(request):
     if request.method == 'POST':

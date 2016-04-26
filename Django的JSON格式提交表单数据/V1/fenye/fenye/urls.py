@@ -6,7 +6,6 @@ import ff.views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^fy/$',ff.views.fy,name='fy'),
     url(r'^json/$',ff.views.json,name='json'),
     url(r'^bd/$',ff.views.bd,name='bd'),
 ]
