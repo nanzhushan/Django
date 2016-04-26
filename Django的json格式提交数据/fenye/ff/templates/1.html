@@ -1,0 +1,21 @@
+
+<h1> 这是分页显示界面........1.html</h1>
+
+
+以下是取第一页的内容：
+
+{% for list1 in list %}
+
+{{ list1.title }}
+
+{% endfor%}
+<br>
+<br>
+<!--<a href="?curPage={{ curPage }}&&allPage={{ allPage }}&&pageType=pageUp"> 上一页</a>-->
+
+<a href="?q=up"> 上一页</a>
+
+<!--<a href="?curPage={{ curPage }}&&allPage={{ allPage }}&&pageType=pageDown">下一页</a>-->
+
+<a href="?q=down">下一页</a>
+
