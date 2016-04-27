@@ -25,6 +25,8 @@ function onClik(){
         data:c,
         type : 'post',
         success: function(data){    //回调函数，就是成功之后后台返回的值
+            //alert( data );
+            data = JSON.parse(data);   //字符串转换成json格式
             alert("name="+data['name']+'\n'+'sex='+data['sex']+'\n'+'文档加载完成，这是回调后台数据');
         }
     });

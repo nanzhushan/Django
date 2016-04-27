@@ -22,29 +22,18 @@ def json(request):
         d4 = loads((request.body).decode())    #获取json对象
         d1 = str(d4)          #转换成str格式
         data = eval(d1)             #转换成字典
-
         data.update(name='knight', sex='man')      #获取的json数据进行处理
 
-        f = open("d:\\knight.txt", 'w+')              #获取的json数据入库
-        f.write(data['sex'])
+        f = open("d:\\ttt.txt",'w+')    #写入文件对传过来的json数据进行处理
+        f.write(data['name'])
         f.close()
-        # return HttpResponse(d2['sex'])
 
+        dh = '{"name":"xixi","sex":"haha"}'              ##字符串形式,回调函数必须取字符串,最外面必须是单引号，里面是双引号
+        return HttpResponse(dh)
 
     return render_to_response('json.html')
 
 
-
-###定义纯粹表单
-
-def bd(request):
-    if request.method == 'POST':
-        name = request.POST.get('name');
-
-        sex = request.POST['sex']
-        return render_to_response('bd.html',{'name':name,'sex':sex})
-        # return HttpResponse(u'你已经post提交了....')
-    return render_to_response('bd.html')
 
 
 
