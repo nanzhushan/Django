@@ -1,0 +1,29 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="application/javascript" src="/static/js/fenye.js"></script>
+
+<title>JSON格式表单提交数据</title>
+
+</head>
+
+<h1> 这是分页显示界面........1.html</h1>
+
+
+以下是取第一页的内容：
+
+{% for list1 in list %}
+
+{{ list1.title }}
+
+{% endfor%}
+<br>
+<br>
+
+<a href="?page=0"> 第一页</a>
+
+<a class="pre-page" href="?page=" onclick="onClik1();" >上一页</a>
+
+<a class="next-page" href="?page=" onclick="onClik();" >下一页</a>
+
