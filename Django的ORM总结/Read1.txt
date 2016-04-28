@@ -1,0 +1,28 @@
+（1）对于Django中已经有的数据。如果想增加一个表的字段方法如下：
+在models中添加一个列名:
+host_group = models.CharField(max_length=20)
+
+可以通过命令
+
+python manage.py sqlall asset
+
+来查看生成的sql语句，然后在mysql客户端执行sql语句即可。
+
+然后在数据中的表中设计表，添加列即可.
+
+
+(2)如果是增加表,方法如下：
+
+在models中添加一个表名:
+
+class Tt(models.Model):
+    xx = models.CharField(max_length=20)
+
+模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句（如果你使用的是Unix，那么可以启用语法高亮）：
+
+python manage.py sqlall asset
+
+
+然后在mysql客户端工具上执行即可。
+
+通过以上可知:修改表结构和增加表  操作都是一样的。
