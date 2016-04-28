@@ -46,7 +46,7 @@ def login(req):
 
                 #比较成功，进行下面的操作
                 # 把获取表单的用户名传递给session对象
-                req.session['username'] = username
+                req.session['username'] = username                   #写入session
                 return  HttpResponseRedirect('/online/index/')       #跳转到登录之后的页面
 
             else:
