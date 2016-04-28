@@ -89,7 +89,7 @@ def list(request):
 def list2(request):
     return render_to_response('list2.html')
 
-##验证失败,跳到错误页面
+##验证失败,跳到错误页面,下面的方法和使用装饰器等效，使用装饰器只是更简单。使用下面的方法就去掉装饰器即可。
     # if not  request.user.is_authenticated():
     #     return HttpResponseRedirect('http://127.0.0.1:8000/static/login_error.html')
     # else:
