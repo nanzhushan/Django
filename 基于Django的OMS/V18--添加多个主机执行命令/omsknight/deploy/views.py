@@ -35,7 +35,7 @@ def exe_test(request):
         tgt = request.POST['a']
         anew = a22.split(',')     #切片变成列表
 
-        tgtcheck = ""      #先设置空值,后面的if会有赋值
+        tgtcheck = "true"      #先设置空值,后面的if会有赋值
 
         ctx['b2'] = request.POST['b']
         b22 = request.POST['b']
@@ -43,20 +43,24 @@ def exe_test(request):
 
         # tgtcheck = HostList.objects.filter(ip=a22)                #能查到值就为真，否则为假
         ##开始比较
+        if a22 == "" or b22 == "":
+            return HttpResponse(u"主机ip或者cmd.run命令不能为空值...")
+
         for i in anew:
-            if HostList.objects.filter(ip=i):    #可以查到记录
-                tgtcheck = "have"                   #就有值
+            if not HostList.objects.filter(ip=i):    #可以查到记录
+                tgtcheck = "error"                   #只要有一个不通过就是error
             else:
-                pass
+              pass
+
 
 
 
         # return HttpResponse(tgtcheck)
-        if b22check and tgtcheck:
+        if b22check and  tgtcheck == "true":
             return HttpResponse(u"目标主机存在，并且不是危险命令，可以执行远程命令的操作....")
         elif not b22check:
             return HttpResponse(u"你这是危险命令，无法执行下一步操作....")
-        elif not tgtcheck:
+        elif tgtcheck == "error":
             return  HttpResponse(u"目标主机不存在,请重新输入....")
 
 
