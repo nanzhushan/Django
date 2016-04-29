@@ -1,0 +1,107 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="application/javascript" src="/static/js/fenye.js"></script>
+
+
+</head>
+
+<h1>以下是数据库中所有主机的内容:</h1>
+
+<style type="text/css">
+.aa {
+	text-align: center;
+}
+</style>
+
+
+<table width="1000" height="50" border="1">
+ <thead>
+ <tr>
+
+     <th width="100">IP地址</th> <th width="100">主机名</th> <th width="100">产品</th><th width="100">应用</th>
+  <th width="100">机柜编号</th> <th width="100">运行状态</th> <th width="100">备注</th><th width="100">主机组</th><th width="100">操作</th>
+
+ </tr>
+
+ </thead>
+
+
+
+{% for list1 in list %}
+
+    <script type="text/javascript">
+
+function queren( names )
+{
+
+var se=confirm("你确定要删除这条记录吗？");
+if (se==true)
+  {
+   if( names ){
+        window.location.href='/delete_host/'+names;
+   }else{
+        window.location.href='/delete_host/{{ list1.id }}/';
+   }
+
+  }
+else
+  {
+  alert("将返回主界面");
+
+  }
+}
+function multDel(){
+
+    var names = [];
+    $("input:checkbox:checked").each(function( i , item ){
+        console.log( i , item );
+        names.push($(item).attr("name"));
+    });
+
+    // 执行删除
+    if( !names.length ){
+        alert("请先选中")
+        return false;
+    }
+    queren( names.join(",") );               //取到的id加逗号,传给后台，id 和 表格的ip是绑定在一起的
+}
+$(function(){                                 //事件绑定
+    $(".mult-del-btn").off().on("click", function(){
+        multDel();
+    });
+})
+</script>
+
+
+    <tr>
+
+<td width="100"> <label><input name="{{ list1.id }}" class="checkbox" type="checkbox" value="" /> </label>  {{ list1.ip }} </td>
+<td width="100">{{ list1.hostname }}</td>
+<td width="100">{{ list1.product }}</td>
+<td width="100">{{ list1.application }}</td>
+<td width="100">{{ list1.idc_jg }}</td>
+<td width="100">{{ list1.status }}</td>
+<td width="100">{{ list1.remark }}</td>
+<td width="100">{{ list1.list_group }}</td>
+
+        <!--<td  class="btn btn-info btn-sm"><li><a  href="{{ list1.id }}">编辑</a> <a  href="/delete_host/{{ list1.id }}/" onclick="queren()">删除</a> </li></td>-->
+<td  class="btn btn-info btn-sm"><li><a  href="{{ list1.id }}">编辑</a> <a  href="javascript:void();" onclick="queren()">删除</a> </li></td>
+
+    </tr>
+{% endfor%}
+</table>
+
+<a href="?page=0"> 第一页</a>    &nbsp &nbsp
+
+<a class="pre-page" href="?page=" onclick="onClik1();" >上一页</a>  &nbsp &nbsp
+
+<a class="next-page" href="?page=" onclick="onClik();" >下一页</a>    &nbsp &nbsp
+
+<a href="javascript:void();" class="mult-del-btn"> 批量删除</a>  &nbsp &nbsp
+
+<a href="/hindex/">返回后台首页</a>
+
+
+ <p class="aa"><a  href="/creat_host/" > 添加新主机</a> <p>

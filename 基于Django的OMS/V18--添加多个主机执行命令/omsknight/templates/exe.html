@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+<p>请输入相应主机和命令，记住主机多个主机必须是用逗号隔开:(这是post方法)</p>
+
+
+<form action="/exe/" method="post">
+
+    a(salt主机................): <input type="text" name="a"> <br>
+    b(salt的cmd.run后面的命令）: <input type="text" name="b"> <br>
+
+    <input type="submit" value="提交">
+</form>
+<p>第一值a是: {{ a1 }}</p>
+<p>相加的结果是: {{ c1 }}</p>
+<p>post提交的结果的显示的字符串是: {{a2}}</p>
+
+<br>
+<br>
+<a href="/hindex/">返回后台首页</a>
+</body>
+</html>
