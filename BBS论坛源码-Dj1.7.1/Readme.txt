@@ -7,3 +7,6 @@ http://edu.51cto.com/course/course_id-2787.html
 需要安装各种依赖比如:
 pip install South 等 
 
+
+源码内容可借鉴学习它的方法.
+
