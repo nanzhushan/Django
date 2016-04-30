@@ -1,6 +1,6 @@
 ##注意指定安装Django的版本
 （sudo) pip install Django
-或者 (sudo) pip install Django==1.6.10 或者 pip install Django==1.7.6
+或者 (sudo) pip install Django==1.8.2 或者 pip install Django==1.7.6
 
 (sudo) pip install --upgrade pip
 
