@@ -2,6 +2,8 @@
 （sudo) pip install Django
 或者 (sudo) pip install Django==1.8.2 或者 pip install Django==1.7.6
 
+卸载：pip uninstall Django==1.8.2
+
 (sudo) pip install --upgrade pip
 
 
