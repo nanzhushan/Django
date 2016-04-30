@@ -1,0 +1,50 @@
+.profile_photo {
+        height:50px;
+        width:50px;
+        margin-top:-15px;
+}
+
+.profile_photo_child_comment {
+        height:35px;
+        width:35px;
+        margin-top:-10px;
+}
+
+.index_category {
+	text-align:center;
+	font-size:20px;
+	
+}
+
+.hot_comments {
+	text-decoration:none;
+	font-size:14px;
+}
+h4 { font-size:16px;}
+h1, h2, h3, h4, h5, h6 {
+//font-size: 1em;
+line-height: 1.5;
+font-family: "Microsoft YaHei","WenQuanYi Micro Hei",SimHei,tahoma,sans-serif;
+font-weight: normal;
+}
+
+
+.brand_font {
+	margin-top:5px;
+	font-family: "Microsoft YaHei","WenQuanYi Micro Hei",SimHei,tahoma,sans-serif;
+	font-weight: normal;
+	color:#4ba733;
+}
+
+.font_style {
+	color:#4ba733;
+}
+
+.category_list {
+	width:110px;
+}
+
+.profile_photo_intro {
+        height:50px;
+        width:50px;
+}

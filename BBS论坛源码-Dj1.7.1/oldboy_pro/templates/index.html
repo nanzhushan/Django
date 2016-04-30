@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+
+		<title class="font_style">少帅｜BBS</title>
+
+		<!-- http://twitter.github.com/bootstrap/ -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- http://fontello.com/ -->
+		<link href="/static/css/fontello.css" rel="stylesheet">
+		<!--[if IE 7]><link rel="stylesheet" href="/static/css/fontello-ie7.css"><![endif]-->
+
+		<!-- http://kudakurage.com/ligature_symbols/ -->
+		<link href="/static/css/ligature.css" rel="stylesheet">
+
+		<!-- http://www.pixedelic.com/plugins/camera/ -->
+		<link href="/static/css/camera.css" rel="stylesheet">
+
+		<!-- http://isotope.metafizzy.co/ -->
+		<link href="/static/css/isotope.css" rel="stylesheet">
+
+		<!-- https://github.com/eternicode/bootstrap-datepicker -->
+		<link href="/static/css/datepicker.css" rel="stylesheet">
+
+		<!-- http://www.jacklmoore.com/colorbox -->
+		<link href="/static/css/colorbox.css" rel="stylesheet">
+
+		<!-- http://bxslider.com/ -->
+		<link href="/static/css/jquery.bxslider.css" rel="stylesheet" />
+
+		<!-- http://tympanus.net/codrops/2012/04/09/direction-aware-hover-effect-with-css3-and-jquery/ -->
+		<link rel="stylesheet" type="text/css" href="/static/css/hover-style.css" />
+
+		<!-- http://www.google.com/webfonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- saltflakes stylesheets -->
+		<link href="/static/css/standard.css" rel="stylesheet">
+
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<!-- buttons -->
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<!--link rel="stylesheet" href="/static/Buttons/css/main.css"-->
+		<link rel="stylesheet" href="/static/Buttons/css/buttons.css"> 
+	
+		<!--for bbs only-->
+		<link href="/static/css/customized.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<!-- navigation -->
+		<div class="container-fluid sf_nav">
+			<div class="navbar navbar-static-top">
+				<div class="navbar-inner">
+					<div class="container">
+
+						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+						<!--
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</a>
+						-->
+
+						<!-- Be sure to leave the brand out there if you want it shown -->
+						<!--a class="brand myBrand" href="index.html"><img src="img/jodstrap-logo.png"></a-->
+						<a class="brand myBrand  brand_font "  href="index.html"><span style="color:red" class="sf-icon-light-up"></span> 老男孩Linux</a>
+
+						<!-- Everything you want hidden at 940px or less, place within here -->
+						<!--<div class="nav-collapse">-->
+						<ul class="nav pull-right sf_navmenu navanimation sf-menu hidden-phone" id="sf-menu-responsive">
+							<li id="home" class="Lava ">
+								<a href="/">首页<span><span class="hidden-desktop"> - </span>论坛首页</span></a>
+							</li>
+							<!--li id="portfolio" class="Lava open-submenu">
+								<a href="portfolio.html">热贴 <span><span class="hidden-desktop"> - </span>最新热帖</span></a>
+								<ul class="navsub noLava">
+									<li class="noLava">
+										<a href="portfolio.html">Version 1</a>
+									</li>
+									<li class="noLava">
+										<a href="portfolio2.html">Version 2</a>
+									</li>
+								</ul>
+							</li-->
+							<li id="blog" class="Lava">
+								<a href="/linux/" >运维\架构<span><span class="hidden-desktop"> - </span>Linux运维</span></a>
+							</li>
+							<li id="features" class="Lava open-submenu">
+								<a href="/python/">Python<span><span class="hidden-desktop"> - </span>运维开发</span></a>
+							</li>
+							<li id="contacts" class="Lava">
+								<a href="/diary/">逆袭之路 <span><span class="hidden-desktop"> - </span>生活日记</span></a>
+							</li>
+							<li id="contacts" class="Lava">
+                                                            {% if login_user.is_authenticated %}
+								<a href="/personal_info/">{{ login_user}} <span style="color:red"><span class="hidden-desktop"> - </span> 5 新消息</span></a>
+							    {%else%}
+								<a href="/login/">登录 <span><span class="hidden-desktop"></span>Login</span></a>
+							    {%endif%}     
+                                                        </li>
+						</ul>
+						<!--</div> -->
+					</div>
+				</div>
+			</div>
+			<!-- end navbar -->
+		</div>
+		<!-- end navigation -->
+		<div id="page-content">
+		{%  block page-content %}
+		<!-- camera slider -->
+		<!--div class="container offset-top-xl">
+			<div class="camera_wrap camera_white_skin" id="camera_wrap_1">
+				<div data-thumb="/static/images/slides/thumbs/bridge.jpg" data-src="/static/images/slides/bridge.jpg">
+					<div class="camera_caption fadeFromBottom">
+						Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+					</div>
+				</div>
+				<div data-thumb="/static/images/slides/thumbs/leaf.jpg" data-src="/static/images/slides/leaf.jpg">
+					<div class="camera_caption fadeFromBottom">
+						It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
+					</div>
+				</div>
+				<div data-thumb="/static/images/slides/thumbs/road.jpg" data-src="/static/images/slides/road.jpg">
+					<div class="camera_caption fadeFromBottom">
+						<em>It's completely free</em> (even if a donation is appreciated)
+					</div>
+				</div>
+				<div data-thumb="/static/images/slides/thumbs/sea.jpg" data-src="/static/images/slides/sea.jpg">
+					<div class="camera_caption fadeFromBottom">
+						Camera slideshow provides many options <em>to customize your project</em> as more as possible
+					</div>
+				</div>
+				<div data-thumb="/static/images/slides/thumbs/shelter.jpg" data-src="/static/images/slides/shelter.jpg">
+					<div class="camera_caption fadeFromBottom">
+						It supports captions, HTML elements and videos and <em>it's validated in HTML5</em> (<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.pixedelic.com%2Fplugins%2Fcamera%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.2" target="_blank">have a look</a>)
+					</div>
+				</div>
+				<div data-thumb="/static/images/slides/thumbs/tree.jpg" data-src="/static/images/slides/tree.jpg">
+					<div class="camera_caption fadeFromBottom">
+						Different color skins and layouts available, <em>fullscreen ready too</em>
+					</div>
+				</div>
+			</div>
+		</div-->
+		<!-- end camera slider -->
+
+		<!-- content area -->
+		<div class="container">
+			<!-- welcome text -->
+			<div class="row-fluid" align="center">
+				<h3 class="font_style">好好学习 天天向上</h3>
+				<p>
+				成为Linux高级运维架构师、 Python运维开发工程师，让我们一起致青春!
+				</p>
+				<hr>
+			</div>
+			<!-- end welcome text -->
+
+			<!-- row for /static/images -->
+			<div class="row-fluid offset-both">
+				<div class="span3" align="center">
+					<!--div class="offset-bottom"><img src="/static/misc/baking-cookies.jpg" /-->
+					<div class="offset-bottom"><img src="/static/Flat-UI-master/images/icons/svg/clocks.svg" />
+					</div>
+					<h4 class="index_category"> 
+						签到中心
+					</4>
+				</div>
+				<div class="span3" align="center">
+					<div class="offset-bottom"><img src="/static/Flat-UI-master/images/icons/svg/gift-box.svg" />
+					</div>
+					<h4 class="index_category">
+						积分管理	
+					</h4>
+				</div>
+				<div class="span3" align="center">
+					<!--div class="offset-bottom"><img src="/static/misc/young-man-enjoying-his-freedomrejoicing-from-his-success-in-the.jpg" /-->
+					<div class="offset-bottom"><img src="/static/Flat-UI-master/images/icons/svg/calendar.svg" />
+					</div>
+					<h4 class="index_category">
+						<a href="/diary/"> 学习笔记</a>
+					</h4>
+				</div>
+				<div class="span3" align="center">
+					<div class="offset-bottom" ><img src="/static/Flat-UI-master/images/icons/svg/clipboard.svg" />
+					</div>
+					<h4 class="index_category">
+						<a href="/jobs/"> 职位推荐</a>
+					</h4>
+				</div>
+			</div>
+			<!-- end row for /static/images -->
+
+			<div class="row-fluid offset-both">
+				<!-- column one infobox -->
+				<div class="span6">
+					<h4>公告区</h4>
+					<hr>
+					<div>
+						<div class="span6">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Pellentesque a lobortis erat. Maecenas vel metus vitae urna sollicitu.
+							</p>
+							<p>
+								Metus vitae urna sollicitudin eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lor pera adomrar dolor libadon se cule padore a folodurento.
+							</p>
+						</div>
+						<div class="span6">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Pellentesque eu posuere leo.
+								Pellentesque a Design erat. Maecenas vel metus vitae urna sollicitudin eleifend a vel elit.
+								Maecenas vel metus vitae urna sollicitudin eleifend.
+							</p>
+							<a href="index.html#">Follow this link</a>
+						</div>
+					</div>
+				</div>
+				<!-- end column one infobox -->
+
+				<!-- column two quotes -->
+				<div class="span6">
+					<h4>学员心声</h4>
+					<hr>
+					<blockquote>
+						<em>linux知识面的广而深 ，是我们自学人无法预知的。我一直很为自己的自学能力为傲，但是自学了2年的linux，一直没有实践，还是无法从事相关的工作。而跟“老男孩”老师学习后，我很快找到了相关工作，并且毕业后就找到了7500的腾讯运维。让我很兴奋，老男孩是最棒的，我会一直带着老师的精神，认真工作下去.</em>
+						<small><b>刘志强</b> <cite title="Source Title">运维工程师 | 腾讯</cite></small>
+					</blockquote>
+					<blockquote>
+						<em>时至今日，做为一名小米运维工程师，我首先要感谢“老男孩”老师，带我走到linux的世界 ，让我打下了牢固的基础，能把学习的内容运用到企业中去。其次我要感谢alex老师，在python的课程中，讲的生动，深入。让我有机会参加开源软件的开发，使我在计算机生涯中与众不同.</em>
+						<small><b>郑东旭</b> <cite title="Source Title">系统工程师 | 小米公司</cite></small>
+					</blockquote>
+					<blockquote>
+						<em>咨询过很多的Linux培训机构，培训的内容大同小异，而且价格贵，周期长。经1年的学习老男孩的课程我感觉： 1 课程体系非常丰富，知识点全面 2 课程内容具体实在，都是企业一线的生产应用案例 3 教学方法独特，先实际应用，再去深究原理 4 老男孩讲课，强调学习的方法、思想，重视学习的过程和课后总结 5 重视学生的成长进步，注重学生的个人能力的提升 6 多元化的师生互动 7 强调规范性，标准化操作，减少错误操作发生    当然“师傅领进门，修行在个人”，师傅再好，徒弟不学也是没有办法的，我的结果是我努力的果实。    在老男孩老师这学习的童鞋加油努力，更多的Money在前方等着你，不努力是拿不到的！</em>
+						<small><b>薛坤</b> <cite title="Source Title">运维主管 | 京东商城</cite></small>
+					</blockquote>
+					<a href="http://www.etiantian.org/graduate/" target="blank">More...</a>
+				</div>
+				<!-- end column two quotes -->
+			</div>
+		</div>
+		<!-- end content area -->
+		{% endblock%}
+		</div> <!--end page-content-->
+		<!-- footer -->
+		<div class="container_fluid sf_footer">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span4">
+						<h4>友情链接</h4>
+						<a href="http://www.etiantian.org" style="font-size:13px" target="blank">老男孩Linux</a>
+						<hr>
+						<a href="http://triweb.sinaapp.com" style="font-size:13px" target="blank">TriAquae开源运维软件</a>
+						<hr>
+						<a href="http://www.51cto.com/" style="font-size:13px" target="blank">51CTO 论坛</a>
+						<hr>
+						<a href="http://www.chinaunix.net"  style="font-size:13px" target="blank">ChinaUnix 论坛</a>
+					</div>
+					<div class="span4">
+						<h4>关于我们</h4>
+
+						<ul class="unstyled" id="twitter-ticker">
+
+							<div id="tweet-container" >
+							 <p style="font-size:13px">
+							   老男孩Linux是国内少有的专注于高端Linux运维的培训的机构，我们致力于为业内中大型企业培训急需的高级Linux运维工程师、架构师、运维自动化开发工程师,百度、腾讯、阿里、新浪、SOHU、小米等国内知名企业都遍布着老男孩毕业学员.	
+							</p>	
+							</div>
+
+						</ul>
+
+					</div>
+					<div class="span4">
+						<h4>联系方式</h4>
+						<p style="font-size:13px">
+							官方群:246054962   208160987<hr>	
+							课程咨询QQ：70271111 80042789 390320151 <hr>
+							电话： 010-60747396 18600338340 18911718229
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end footer -->
+
+		<!-- scripts -->
+		<script src="/static/js/jquery-1.8.0.min.js"></script>
+		<script src="/static/js/jquery-ui-1.9.0.custom.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/selectnav.min.js"></script>
+		<script src="/static/js/jquery-easing.js"></script>
+		<script src="/static/js/jquery.lavalamp.min.js"></script>
+		<script src="/static/js/jquery.mobile.customized.min.js"></script>
+		<script src="/static/js/camera.min.js"></script>
+		<script src="/static/js/hoverIntent.js"></script>
+		<script src="/static/js/jquery.isotope.min.js"></script>
+		<script src="/static/js/jquery.animate-shadow-min.js"></script>
+		<script src="/static/js/bootstrap-datepicker.js"></script>
+		<script src="/static/js/jquery.validate.min.js"></script>
+		<script src="/static/js/additional-methods.min.js"></script>
+		<script src="/static/js/jquery.colorbox-min.js"></script>
+		<script src="/static/js/jquery.bxslider.min.js"></script>
+		<script src="/static/js/modernizr.custom.97074.js"></script>
+		<script src="/static/js/jquery.hoverdir.js"></script>
+		<script src="/static/js/standard.js"></script>
+		<script src="/static/js/redirect.js"></script>
+		<script src="/static/js/customized.js"></script>
+		<!--buttons for-->
+		<script type="text/javascript" src="/static/Buttons/js/vendor/scrollto.js"></script>
+    		<script type="text/javascript" src="/static/Buttons/js/main.js"></script>
+    		<script type="text/javascript" src="/static/Buttons/js/buttons.js"></script> 
+		<!--end buttons -->
+		<script type="text/javascript"> 
+			// The twitter accounts that will be included in the ticker
+			var tweetUsers = ['speckyboy'];
+		</script>
+
+		<script src="/static/js/jquery-twitter.js"></script>
+
+		<!-- end scripts -->
+
+	</body>
+
+</html>
