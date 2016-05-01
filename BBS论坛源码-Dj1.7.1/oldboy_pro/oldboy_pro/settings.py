@@ -39,9 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.comments',
 	'django.contrib.sites',
 	'bbs',
-	'south',
+	# 'south',
 	'pagination',
-	'debugtools',
+	# 'debugtools',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
