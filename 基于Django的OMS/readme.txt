@@ -16,3 +16,8 @@ MIDDLEWARE_CLASSES = (
 
 
 (2)用HttpResponse 打中文的时候要声明 u"这是中文"，不然提示需要decode.
+
+
+(3)类似oms:
+
+https://github.com/jwh5566/my_oms
