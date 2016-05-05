@@ -1,0 +1,39 @@
+<h1>以下是数据中心资产:</h1>
+
+<link href="/static/css/table.css" rel="stylesheet" type="text/css" />
+
+<body>
+
+
+<table width="1000" height="50" border="1">
+ <thead>
+ <tr><th width="100">机房ID</th> <th width="100">机房名称</th> <th width="100">机房类型</th><th width="100">机房地址</th>
+  <th width="100">到期时间</th> <th width="100">机房联系电话</th> <th width="100">备注</th>
+
+ </tr>
+
+ </thead>
+
+{% for list1 in list %}
+
+    <tr>
+
+<td width="100">{{ list1.id }}</td>
+
+<td width="100">{{ list1.idc_name }}</td>
+<td width="100">{{ list1.idc_type }}</td>
+<td width="100">{{ list1.idc_location }}</td>
+<td width="100">{{ list1.contract_date }}</td>
+<td width="100">{{ list1.idc_contacts }}</td>
+<td width="100">{{ list1.remark }}</td>
+
+{% endfor%}
+</table>
+<br>
+<br>
+
+
+
+ <p class="aa"><a  href="/creat_data_center/" > 添加</a> <p>
+
+</body>

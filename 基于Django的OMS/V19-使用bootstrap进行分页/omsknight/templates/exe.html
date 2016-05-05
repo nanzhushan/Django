@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="/static/css/table.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="ding">
+
+   <h3> 部署管理 / 远程管理 </h3>
+
+    <h1>命令执行</h1>
+
+    </div>
+
+<p>请输入相应主机和命令，记住主机多个主机必须是用逗号隔开:(这是post方法)</p>
+
+
+<form action="/exe/" method="post">
+
+    a(salt主机................): <input type="text" name="a"> <br> <br>
+
+    b(salt的cmd.run后面的命令）: <input type="text" name="b"> <br> <br>
+
+    <input type="submit" value="提交">
+</form>
+
+
+<br>
+<br>
+<a href="/hindex/">返回后台首页</a>
+
+</body>
+</html>
