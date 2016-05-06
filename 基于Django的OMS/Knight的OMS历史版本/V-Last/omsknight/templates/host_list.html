@@ -1,0 +1,149 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+<script type="application/javascript" src="/static/js/fenye.js"></script>
+  <link href="/static/css/houtai.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="navbar navbar-duomi navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header"> <a id = "omsding" class="navbar-brand" href="http://127.0.0.1:8000/hindex/" id="logo">OMS后台管理界面: </a> </div>
+  </div>
+</div>
+<div  class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <script src="/static/js/menu.js"></script>
+      <link href="/static/css/bk.css" rel="stylesheet" type="text/css" />
+    </div>
+    <div class="col-md-10">
+      <div  id="biankuang">
+
+<!--====================分隔线-->
+
+        <div  id="divv">
+  <div class="ding">
+    <h3>资产管理 / 主机列表</h3>
+    <h1>以下是数据库中所有主机的内容:</h1>
+  </div>
+  <form method = 'post'>
+    ip地址:
+    <input type="text" name="ip" />
+    <select name="host_group">
+      <option value ="外贸云" >外贸云</option>
+      <option value ="华邦云应用服务器">华邦云应用服务器</option>
+      <option value="数据库组">数据库组</option>
+      <option value="应用服务器组">应用服务器组</option>
+    </select>
+    <select name="status">
+      <option value ="run" >运行中</option>
+      <option value ="stop">已停止</option>
+    </select>
+    &nbsp
+    <input type="submit" value = "查询" />
+  </form>
+  <style type="text/css">
+.aa {
+	text-align: center;
+}
+</style>
+  <table width="1000" height="50" border="1">
+    <thead>
+      <tr>
+        <th width="150">IP地址</th>
+        <th width="100">主机名</th>
+        <th width="100">产品</th>
+        <th width="100">应用</th>
+        <th width="100">机柜编号</th>
+        <th width="100">运行状态</th>
+        <th width="100">备注</th>
+        <th width="100">主机组</th>
+        <th width="100">操作</th>
+      </tr>
+    </thead>
+    {% for list1 in list %}
+    <script type="text/javascript">
+
+function queren( names )
+{
+
+var se=confirm("你确定要删除这条记录吗？");
+if (se==true)
+  {
+   if( names ){
+        window.location.href='/delete_host/'+names;
+   }else{
+        window.location.href='/delete_host/{{ list1.id }}/';
+   }
+
+  }
+else
+  {
+  alert("将返回主界面");
+
+  }
+}
+function multDel(){
+
+    var names = [];
+    $("input:checkbox:checked").each(function( i , item ){
+        console.log( i , item );
+        names.push($(item).attr("name"));
+    });
+
+    // 执行删除
+    if( !names.length ){
+        alert("请先选中")
+        return false;
+    }
+    queren( names.join(",") );               //取到的id加逗号,传给后台，id 和 表格的ip是绑定在一起的
+}
+$(function(){                                 //事件绑定
+    $(".mult-del-btn").off().on("click", function(){
+        multDel();
+    });
+})
+</script>
+    <tr>
+      <td width="150"><label>
+          <input name="{{ list1.id }}" class="checkbox" type="checkbox" value="" />
+        </label>
+        {{ list1.ip }} </td>
+      <td width="100">{{ list1.hostname }}</td>
+      <td width="100">{{ list1.product }}</td>
+      <td width="100">{{ list1.application }}</td>
+      <td width="100">{{ list1.idc_jg }}</td>
+      <td width="100">{{ list1.status }}</td>
+      <td width="100">{{ list1.remark }}</td>
+      <td width="100">{{ list1.host_group }}</td>
+      <td  class="ccc"><li><a  href="{{ list1.id }}">编辑</a> <a  href="javascript:void();" onclick="queren()">删除</a> </li></td>
+    </tr>
+    {% endfor%}
+  </table>
+  <ul class="pagination">
+    <li><a href="?page=0">&laquo;</a></li>
+    <li><a href="?page=0">1</a></li>
+    <li><a href="?page=1">2</a></li>
+    <li><a href="?page=2">3</a></li>
+    <li><a href="?page=3">4</a></li>
+    <li><a href="?page=">...</a></li>
+    <li><a class="next-page" href="?page=" onclick="onClik();">&gt;</a></li>
+  </ul>
+  &nbsp;&nbsp;&nbsp; <a href="javascript:void();" class="mult-del-btn"> 批量删除</a> &nbsp;&nbsp; <a href="/hindex/">返回后台首页</a> &nbsp; &nbsp;
+  <p class="aa"><a  href="/creat_host/" > 添加新主机</a> </p>
+</div>
+
+        <!--============分隔线-->
+
+
+
+
+         </div>
+    </div>
+  </div>
+</div>
+</body>
